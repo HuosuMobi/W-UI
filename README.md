@@ -8,4 +8,4 @@ W-UI未来尝试使用DOM＋Canvas混合模式带来更炫的界面展示以及�
 
 License
 
-mui遵循MIT License；
+W-UI遵循MIT License；
