@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.WUI-bar~.WUI-content .WUI-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.WUI-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.WUI-bar~.WUI-pull-top-tips {
+				top: 24px;
+			}
+			.WUI-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.WUI-pull-top-tips.WUI-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.WUI-pull-top-tips .WUI-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.WUI-pull-top-wrapper .WUI-icon,
+			.WUI-pull-top-wrapper .WUI-spinner {
+				margin-top: 7px;
+			}
+			.WUI-pull-top-wrapper .WUI-icon.WUI-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			.WUI-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.WUI-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.WUI-pull-top-canvas canvas {
+				width: 40px;
+			}
+			.WUI-slider-indicator.WUI-segmented-control {
+				background-color: #efeff4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">选项卡切换+下拉刷新</h1>
+		</header>
+		<div class="WUI-content">
+			<div id="slider" class="WUI-slider WUI-fullscreen">
+				<div id="sliderSegmentedControl" class="WUI-scroll-wrapper WUI-slider-indicator WUI-segmented-control WUI-segmented-control-inverted">
+					<div class="WUI-scroll">
+						<a class="WUI-control-item WUI-active" href="#item1mobile">
+							推荐
+						</a>
+						<a class="WUI-control-item" href="#item2mobile">
+							热点
+						</a>
+						<a class="WUI-control-item" href="#item3mobile">
+							北京
+						</a>
+						<a class="WUI-control-item" href="#item4mobile">
+							社会
+						</a>
+						<a class="WUI-control-item" href="#item5mobile">
+							娱乐
+						</a>
+						<a class="WUI-control-item" href="#item6mobile">
+							科技
+						</a>
+					</div>
+				</div>
+				<div class="WUI-slider-group">
+					<div id="item1mobile" class="WUI-slider-item WUI-control-content WUI-active">
+						<div id="scroll1" class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第1个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="WUI-slider-item WUI-control-content">
+						<div class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第2个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="WUI-slider-item WUI-control-content">
+						<div class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第3个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="WUI-slider-item WUI-control-content">
+						<div class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第4个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="WUI-slider-item WUI-control-content">
+						<div class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第5个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item6mobile" class="WUI-slider-item WUI-control-content">
+						<div class="WUI-scroll-wrapper">
+							<div class="WUI-scroll">
+								<ul class="WUI-table-view">
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-1
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-2
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-3
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-4
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-5
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-6
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-7
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-8
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-9
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-10
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-11
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-12
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-13
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-14
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-15
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-16
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-17
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-18
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-19
+									</li>
+									<li class="WUI-table-view-cell">
+										第6个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script src="../js/WUI.pullToRefresh.js"></script>
+		<script src="../js/WUI.pullToRefresh.material.js"></script>
+		<script>
+			WUI.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = WUI.os.ios?0.003:0.0009;
+				$('.WUI-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.WUI-slider-group .WUI-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.WUI-table-view');
+										ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.WUI-table-view');
+										ul.appendChild(createFragment(ul, index, 5));
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+					var createFragment = function(ul, index, count, reverse) {
+						var length = ul.querySelectorAll('li').length;
+						var fragment = document.createDocumentFragment();
+						var li;
+						for (var i = 0; i < count; i++) {
+							li = document.createElement('li');
+							li.className = 'WUI-table-view-cell';
+							li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+							fragment.appendChild(li);
+						}
+						return fragment;
+					};
+				});
+			})(WUI);
+		</script>
+	</body>
+
+</html>

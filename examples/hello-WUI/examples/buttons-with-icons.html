@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			 .WUI-btn{
+		        margin-top: 10px;
+		        margin-left: 10px;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+		    <a class="WUI-action-back WUI-icon WUI-icon-back WUI-pull-left"></a>
+		    <h1 class="WUI-title">带图标按钮</h1>
+		</header>
+		<div class="WUI-content">
+		    <div class="WUI-content-padded">
+		    		<h5>图标居左：</h5>
+		        <button type="button" class="WUI-btn WUI-icon WUI-icon-home">
+		            首页
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-primary WUI-icon WUI-icon-search">
+		            搜索
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-success WUI-icon WUI-icon-plus">添加</button>
+		        <button type="button" class="WUI-btn WUI-btn-danger WUI-btn-outlined">
+		            <span class="WUI-icon WUI-icon-trash"></span>
+		            删除	
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-link">
+		            <span class="WUI-icon WUI-icon-back"></span>
+		            返回
+		        </button>
+		        <h5>图标居右：</h5>
+		        <button type="button" class="WUI-btn WUI-icon WUI-icon-home WUI-right">
+		            首页
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-primary WUI-icon WUI-icon-search WUI-right">
+		            搜索
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-success WUI-icon WUI-icon-plus WUI-right">添加</button>
+		        <button type="button" class="WUI-btn WUI-btn-danger WUI-btn-outlined">
+		            删除	
+		            <span class="WUI-icon WUI-icon-trash"></span>
+		        </button>
+		        <button type="button" class="WUI-btn WUI-btn-link">
+		            下一步
+		            <span class="WUI-icon WUI-icon-forward"></span>
+		        </button>
+		    </div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>

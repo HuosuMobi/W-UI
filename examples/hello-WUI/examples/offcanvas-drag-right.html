@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			p {
+				text-indent: 22px;
+			}
+			span.WUI-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			.WUI-off-canvas-left {
+				color: #fff;
+			}
+			.title {
+				margin: 35px 15px 10px;
+			}
+			.title+.content {
+				margin: 10px 15px 35px;
+				color: #bbb;
+				text-indent: 1em;
+				font-size: 14px;
+				line-height: 24px;
+			}
+			input {
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="WUI-off-canvas-wrap WUI-draggable">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="WUI-off-canvas-left">
+				<div id="offCanvasSideScroll" class="WUI-scroll-wrapper">
+					<div class="WUI-scroll">
+						<div class="title">侧滑导航</div>
+						<div class="content">
+							这是可拖动式侧滑菜单示例，你可以在这里放置任何内容；关闭侧滑菜单有多种方式： 1.在手机屏幕任意位置向左拖动(drag)；2.点击本侧滑菜单页之外的任意位置; 3.点击如下红色按钮
+							<span class="android-only">；4.Android手机按back键；5.Android手机按menu键
+							</span>。
+							<p style="margin: 10px 15px;">
+								<button id="offCanvasHide" type="button" class="WUI-btn WUI-btn-danger WUI-btn-block" style="padding: 5px 20px;">关闭侧滑菜单</button>
+							</p>
+
+						</div>
+						<div class="title" style="margin-bottom: 25px;">侧滑列表示例</div>
+						<ul class="WUI-table-view WUI-table-view-chevron WUI-table-view-inverted">
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 1
+								</a>
+							</li>
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 2
+								</a>
+							</li>
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 3
+								</a>
+							</li>
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 4
+								</a>
+							</li>
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 5
+								</a>
+							</li>
+							<li class="WUI-table-view-cell">
+								<a class="WUI-navigate-right">
+									Item 6
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<!--主界面部分-->
+			<div class="WUI-inner-wrap">
+				<header class="WUI-bar WUI-bar-nav">
+					<a href="#offCanvasSide" class="WUI-icon WUI-action-menu WUI-icon-bars WUI-pull-left"></a>
+					<a class="WUI-action-back WUI-btn WUI-btn-link WUI-pull-right">关闭</a>
+					<h1 class="WUI-title">div模式右滑菜单</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="WUI-content WUI-scroll-wrapper">
+					<div class="WUI-scroll">
+						<div class="WUI-content-padded">
+							<p>这是可拖动式右滑导航示例，主页面和菜单在一个HTML文件中， 优点是支持拖动手势（跟手），缺点是不支持菜单内容在多页面的复用； 当前页面为主界面，你可以在主界面放置任何内容； 打开侧滑菜单有多种方式： 1、在当前页面向右拖动； 2、点击页面左上角的
+								<span class="WUI-icon WUI-icon-bars"></span> 图标； 3、通过JS API触发（例如点击如下蓝色按钮体验）；
+								<span class="android-only">4、Android手机按menu键；</span>
+							</p>
+							<p style="padding: 5px 20px;margin-bottom: 5px;">
+								<button id="offCanvasShow" type="button" class="WUI-btn WUI-btn-primary WUI-btn-block" style="padding: 10px;">
+									显示侧滑菜单
+								</button>
+							</p>
+							<p>侧滑菜单的移动动画，支持多种效果，切换如下选项体验不同动画效果：</p>
+
+						</div>
+
+						<form class="WUI-input-group" style="margin-bottom: 15px;">
+							<div class="WUI-input-row WUI-radio">
+								<label>主界面移动、菜单不动</label>
+								<input name="style" type="radio" checked="" value="main-move">
+							</div>
+							<div class="WUI-input-row WUI-radio">
+								<label>主界面不动、菜单移动</label>
+								<input name="style" type="radio" value="menu-move">
+							</div>
+							<div class="WUI-input-row WUI-radio WUI-hidden" id="move-togger">
+								<label>整体移动</label>
+								<input name="style" type="radio" value="all-move">
+							</div>
+							<div class="WUI-input-row WUI-radio">
+								<label>缩放式侧滑（类手机QQ）</label>
+								<input name="style" type="radio" value="main-move-scalable">
+							</div>
+						</form>
+
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="WUI-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script>
+			WUI.init();
+			 //侧滑容器父节点
+			var offCanvasWrapper = WUI('#offCanvasWrapper');
+			 //主界面容器
+			var offCanvasInner = offCanvasWrapper[0].querySelector('.WUI-inner-wrap');
+			 //菜单容器
+			var offCanvasSide = document.getElementById("offCanvasSide");
+			if (!WUI.os.android) {
+				document.getElementById("move-togger").classList.remove('WUI-hidden');
+				var spans = document.querySelectorAll('.android-only');
+				for (var i = 0, len = spans.length; i < len; i++) {
+					spans[i].style.display = "none";
+				}
+			}
+			 //移动效果是否为整体移动
+			var moveTogether = false;
+			 //侧滑容器的class列表，增加.WUI-slide-in即可实现菜单移动、主界面不动的效果；
+			var classList = offCanvasWrapper[0].classList;
+			 //变换侧滑动画移动效果；
+			WUI('.WUI-input-group').on('change', 'input', function() {
+				if (this.checked) {
+					offCanvasSide.classList.remove('WUI-transitioning');
+					offCanvasSide.setAttribute('style', '');
+					classList.remove('WUI-slide-in');
+					classList.remove('WUI-scalable');
+					switch (this.value) {
+						case 'main-move':
+							if (moveTogether) {
+								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
+								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
+							}
+							break;
+						case 'main-move-scalable':
+							if (moveTogether) {
+								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
+								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
+							}
+							classList.add('WUI-scalable');
+							break;
+						case 'menu-move':
+							classList.add('WUI-slide-in');
+							break;
+						case 'all-move':
+							moveTogether = true;
+							//整体滑动时，侧滑菜单在inner-wrap内
+							offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
+							break;
+					}
+					offCanvasWrapper.offCanvas().refresh();
+				}
+			});
+			 //主界面‘显示侧滑菜单’按钮的点击事件
+			document.getElementById('offCanvasShow').addEventListener('tap', function() {
+				offCanvasWrapper.offCanvas('show');
+			});
+			 //菜单界面，‘关闭侧滑菜单’按钮的点击事件
+			document.getElementById('offCanvasHide').addEventListener('tap', function() {
+				offCanvasWrapper.offCanvas('close');
+			});
+			 //主界面和侧滑菜单界面均支持区域滚动；
+			WUI('#offCanvasSideScroll').scroll();
+			WUI('#offCanvasContentScroll').scroll();
+			 //实现ios平台原生侧滑关闭页面；
+			if (WUI.os.plus && WUI.os.ios) {
+				WUI.plusReady(function() { //5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+					plus.webview.currentWebview().setStyle({
+						'popGesture': 'none'
+					});
+				});
+			}
+		</script>
+	</body>
+
+</html>

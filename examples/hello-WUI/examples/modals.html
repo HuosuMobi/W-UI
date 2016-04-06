@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<script src="../js/WUI.min.js"></script>
+		<style>
+			html,body {
+				background-color: #efeff4;
+			}
+		</style>
+		<script>
+			WUI.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+		</script>
+	</head>
+	<body>
+		<div class="WUI-content">
+			<header class="WUI-bar WUI-bar-nav">
+				<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+				<h1 class="WUI-title">modal（弹出窗口）</h1>
+			</header>
+			<div class="WUI-content">
+				<a href="#modal" class="WUI-btn WUI-btn-primary WUI-btn-block">Click</a>
+			</div>
+			<div id="modal" class="WUI-modal">
+				<header class="WUI-bar WUI-bar-nav">
+					<a class="WUI-icon WUI-icon-close WUI-pull-right" href="#modal"></a>
+					<h1 class="WUI-title">Modal</h1>
+				</header>
+				<div class="WUI-content" style="height: 100%;">
+					<p class="WUI-content-padded">The contents of my modal go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

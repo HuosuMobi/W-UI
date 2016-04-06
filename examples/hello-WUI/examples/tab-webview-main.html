@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 id="title" class="WUI-title">首页</h1>
+		</header>
+		<nav class="WUI-bar WUI-bar-tab">
+			<a id="defaultTab" class="WUI-tab-item WUI-active" href="tab-webview-subpage-about.html">
+				<span class="WUI-icon WUI-icon-home"></span>
+				<span class="WUI-tab-label">首页</span>
+			</a>
+			<a class="WUI-tab-item" href="tab-webview-subpage-chat.html">
+				<span class="WUI-icon WUI-icon-email"><span class="WUI-badge">9</span></span>
+				<span class="WUI-tab-label">消息</span>
+			</a>
+			<a class="WUI-tab-item" href="tab-webview-subpage-contact.html">
+				<span class="WUI-icon WUI-icon-contact"></span>
+				<span class="WUI-tab-label">通讯录</span>
+			</a>
+			<a class="WUI-tab-item" href="tab-webview-subpage-setting.html">
+				<span class="WUI-icon WUI-icon-gear"></span>
+				<span class="WUI-tab-label">设置</span>
+			</a>
+		</nav>
+		<script src="../js/WUI.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			 //WUI初始化
+			WUI.init();
+			var subpages = ['tab-webview-subpage-about.html', 'tab-webview-subpage-chat.html', 'tab-webview-subpage-contact.html', 'tab-webview-subpage-setting.html'];
+			var subpage_style = {
+				top: '45px',
+				bottom: '51px'
+			};
+			
+			var aniShow = {};
+			
+			 //创建子页面，首个选项卡页面显示，其它均隐藏；
+			WUI.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 4; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						WUI.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}
+			});
+			 //当前激活选项
+			var activeTab = subpages[0];
+			var title = document.getElementById("title");
+			 //选项卡点击事件
+			WUI('.WUI-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.getAttribute('href');
+				if (targetTab == activeTab) {
+					return;
+				}
+				//更换标题
+				title.innerHTML = this.querySelector('.WUI-tab-label').innerHTML;
+				//显示目标选项卡
+				//若为iOS平台或非首次显示，则直接显示
+				if(WUI.os.ios||aniShow[targetTab]){
+					plus.webview.show(targetTab);
+				}else{
+					//否则，使用fade-in动画，且保存变量
+					var temp = {};
+					temp[targetTab] = "true";
+					WUI.extend(aniShow,temp);
+					plus.webview.show(targetTab,"fade-in",300);
+				}
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			 //自定义事件，模拟点击“首页选项卡”
+			document.addEventListener('gohome', function() {
+				var defaultTab = document.getElementById("defaultTab");
+				//模拟首页点击
+				WUI.trigger(defaultTab, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".WUI-bar-tab>.WUI-tab-item.WUI-active");
+				if (defaultTab !== current) {
+					current.classList.remove('WUI-active');
+					defaultTab.classList.add('WUI-active');
+				}
+			});
+		</script>
+	</body>
+
+</html>

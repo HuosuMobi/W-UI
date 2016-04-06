@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			/*跨webview需要手动指定位置*/
+			
+			.WUI-plus header.WUI-bar {
+				display: none!important;
+			}
+			.WUI-plus .WUI-bar-nav~.WUI-content {
+				padding: 0!important;
+			}
+			
+			.WUI-plus .plus{
+				display: inline;
+			}
+			
+			.plus{
+				display: none;
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			#topPopover .WUI-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			p {
+				text-indent: 22px;
+			}
+			span.WUI-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			.WUI-popover {
+				height: 300px;
+			}
+			.WUI-content {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<a id="menu" class="WUI-action-menu WUI-icon WUI-icon-bars WUI-pull-right" href="#topPopover"></a>
+			<h1 class="WUI-title">popover（弹出菜单）</h1>
+		</header>
+		<footer class="WUI-bar WUI-bar-footer">
+			<a href="#bottomPopover" class="WUI-btn WUI-btn-link WUI-pull-right">菜单</a>
+		</footer>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<p>popover（弹出菜单是）mobile App中常见的UI组件，在用户点击位置附近弹出悬浮菜单，向用户展示更多信息或提供快捷操作。</p>
+				<p>popover最常用的两个位置：顶部导航栏右侧和底部工具栏右侧； 点击本页右上角的
+					<span class="WUI-icon WUI-icon-bars"></span> 图标体验，<span class="plus">这是一个
+					<strong>跨webview</strong>的popover示例，
+					<span class="WUI-icon WUI-icon-bars"></span>在父webview中，点击后通过自定义事件 通知子webview， 子webview再执行popover的显示隐藏逻辑； </span>接着点击本页面右下角的“菜单”按钮体验。
+				</p>
+				<p>除了页面顶部导航栏、底部工具栏固定位置之外，其它区域要使用弹出菜单，都要准确计算物理位置，从而实现弹出菜单的绝对定位； WUI封装的手势事件中，可以获得点击位置，通过这些位置可实现任意区域的弹出菜单显示，点击如下按钮体验：
+				</p>
+				<p>
+					<a href="#middlePopover" class="WUI-btn WUI-btn-primary WUI-btn-block WUI-btn-outlined" style="padding: 5px 20px;">打开弹出菜单</a>
+				</p>
+			</div>
+		</div>
+		<!--右上角弹出菜单-->
+		<div id="topPopover" class="WUI-popover">
+			<div class="WUI-popover-arrow"></div>
+			<div class="WUI-scroll-wrapper">
+				<div class="WUI-scroll">
+					<ul class="WUI-table-view">
+						<li class="WUI-table-view-cell">
+							<a href="#">Item1</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item2</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item3</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item4</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item5</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item6</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item7</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item8</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item9</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item10</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div id="middlePopover" class="WUI-popover">
+			<div class="WUI-popover-arrow"></div>
+			<div class="WUI-scroll-wrapper">
+				<div class="WUI-scroll">
+					<ul class="WUI-table-view">
+						<li class="WUI-table-view-cell"><a href="#">Item1</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item2</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item3</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item4</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item5</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item6</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item7</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item8</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item9</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item10</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<!--右下角弹出菜单-->
+		<div id="bottomPopover" class="WUI-popover WUI-popover-bottom">
+			<div class="WUI-popover-arrow"></div>
+			<div class="WUI-scroll-wrapper">
+				<div class="WUI-scroll">
+					<ul class="WUI-table-view">
+						<li class="WUI-table-view-cell"><a href="#">Item1</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item2</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item3</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item4</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item5</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item6</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item7</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item8</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item9</a>
+						</li>
+						<li class="WUI-table-view-cell"><a href="#">Item10</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script>
+			WUI.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			WUI('.WUI-scroll-wrapper').scroll();
+			WUI('body').on('shown', '.WUI-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			WUI('body').on('hidden', '.WUI-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+		</script>
+	</body>
+
+</html>

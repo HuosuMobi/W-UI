@@ -1,0 +1,197 @@
+http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/yuantiao.jpg<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<style type="text/css">
+			.WUI-preview-image.WUI-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.WUI-preview-header,
+			.WUI-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/yuantiao.jpg
+			}
+			.WUI-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.WUI-preview-footer {http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/muwu.jpg
+				height: 50px;
+				bottom: 0px;
+			}
+			.WUI-preview-header .WUI-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.WUI-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.WUI-preview-image.WUI-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.WUI-preview-image.WUI-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.WUI-preview-image.WUI-preview-out .WUI-preview-header,
+			.WUI-preview-image.WUI-preview-out .WUI-preview-footer {
+				display: none;
+			}
+			.WUI-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.WUI-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.WUI-slider .WUI-slider-group .WUI-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.WUI-android-4-1 .WUI-slider .WUI-slider-group .WUI-slider-item img {
+				width: 100%;
+			}
+			.WUI-android-4-1 .WUI-slider.WUI-preview-image .WUI-slider-group .WUI-slider-item {
+				display: inline-table;
+			}
+			.WUI-android-4-1 .WUI-slider.WUI-preview-image .WUI-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.WUI-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/muwu.jpg
+			}
+			.WUI-preview-loading.WUI-active {
+				display: block;
+			}
+			.WUI-preview-loading .WUI-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.WUI-preview-image img.WUI-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/muwu.jpg
+				transition: transform 0.5s ease, opacity 0.5s eashttp://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/muwu.jpge;
+			}
+			@-webkit-keyframes fadeIn {http://192.168.0.25:8020/WUI-http://192.168.0.25:8020/WUI-master/examples/hello-WUI/images/muwu.jpgmaster/examples/hello-WUI/images/muwu.jpg
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">image viewer（图片预览）</h1>
+		</header>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<p>这是图片放大预览示例，点击如下图片体验全屏预览功能</p>
+				<p>
+					<img src="../images/yuantiao.jpg" data-preview-src="" data-preview-group="1" />
+				</p>
+				<p>图片全屏后，双击或双指缩放均可对图片进行放大、缩小操作，左右滑动可查看同组(data-preview-group相同的图片为一组)其它图片，点击会关闭预览</p>
+				<p>
+					<img src="../images/muwu.jpg" data-preview-src="" data-preview-group="1" />
+				</p>
+				<p>第三张图片，纯粹为了占位： </p>
+				<p>
+					<img src="../images/shuijiao.jpg" data-preview-src="" data-preview-group="1" />
+				</p>
+			</div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script src="../js/WUI.zoom.js"></script>
+	<script src="../js/WUI.previewimage.js"></script>
+	<script>
+		WUI.previewImage();
+	</script>
+
+</html>

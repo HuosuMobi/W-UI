@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			p {
+				text-indent: 22px;
+			}
+			span.WUI-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			#info {
+				padding: 20px 10px;
+			}
+			.des {
+				margin: .5em 0;
+			}
+			.des>li {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">H5模式actionsheet</h1>
+		</header>
+		<nav class="WUI-bar WUI-bar-tab">
+			<a class="WUI-tab-item" href="#delete">
+				<span class="WUI-icon WUI-icon-trash"></span>
+			</a>
+			<a class="WUI-tab-item" href="#">
+			</a>
+			<a class="WUI-tab-item" href="#">
+			</a>
+			<a class="WUI-tab-item" href="#forward">
+				<span class="WUI-icon WUI-icon-undo"></span>
+			</a>
+		</nav>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<p>actionsheet一般从底部弹出，显示一系列可选择的操作按钮，供用户选择； actionSheet可从任意位置触发， 点击本页面左下角
+					<span class="WUI-icon WUI-icon-trash"></span>会弹出删除信息确认框； 点击本页面右下角
+					<span class="WUI-icon WUI-icon-undo"></span>会弹出转发确认框； 你也可点击如下按钮，打开照片选择框：
+				</p>
+				<p>
+					<a href="#picture" class="WUI-btn WUI-btn-primary WUI-btn-block WUI-btn-outlined" style="padding: 5px 20px;">打开actionsheet</a>
+				</p>
+				<p>本页面为H5模式的actionsheet演示示例，该模式具有如下优点：</p>
+				<ul class="des">
+					<li>可通过css自由定制展现样式</li>
+				</ul>
+
+				<p>另一方面，H5模式的actionsheet也具备如下缺点：</p>
+				<ul class="des">
+					<li>不支持覆盖顶部状态栏</li>
+					<li>不支持跨webview的遮罩</li>
+					<li>在有map等原生组件时，容易被遮挡</li>
+				</ul>
+				<p id="info"></p>
+			</div>
+		</div>
+
+		<div id="delete" class="WUI-popover WUI-popover-action WUI-popover-bottom">
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#" style="color: #FF3B30;">删除信息</a>
+				</li>
+			</ul>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#delete"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div id="forward" class="WUI-popover WUI-popover-action WUI-popover-bottom">
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#">回复</a>
+				</li>
+				<li class="WUI-table-view-cell">
+					<a href="#">转发</a>
+				</li>
+				<li class="WUI-table-view-cell">
+					<a href="#">打印</a>
+				</li>
+			</ul>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#forward"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div id="picture" class="WUI-popover WUI-popover-action WUI-popover-bottom">
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#">拍照或录像</a>
+				</li>
+				<li class="WUI-table-view-cell">
+					<a href="#">选取现有的</a>
+				</li>
+			</ul>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					<a href="#picture"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		WUI('body').on('shown', '.WUI-popover', function(e) {
+			//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		WUI('body').on('hidden', '.WUI-popover', function(e) {
+			//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+		var info = document.getElementById("info");
+		WUI('body').on('tap', '.WUI-popover-action li>a', function() {
+			var a = this,
+				parent;
+			//根据点击按钮，反推当前是哪个actionsheet
+			for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+				if (parent.classList.contains('WUI-popover-action')) {
+					break;
+				}
+			}
+			//关闭actionsheet
+			WUI('#' + parent.id).popover('toggle');
+			info.innerHTML = "你刚点击了\"" + a.innerHTML + "\"按钮";
+		})
+	</script>
+
+</html>

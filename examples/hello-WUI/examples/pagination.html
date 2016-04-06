@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">pagination（分页）</h1>
+		</header>
+		<div class="WUI-content">
+			<h5 class="WUI-content-padded">分页(默认尺寸)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pagination">
+					<li class="WUI-previous WUI-disabled">
+						<a href="#">
+							&laquo;
+						</a>
+					</li>
+					<li class="WUI-active">
+						<a href="#">
+							1
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							2
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							3
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							4
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							5
+						</a>
+					</li>
+					<li class="WUI-next">
+						<a href="#">
+							&raquo;
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h5 class="WUI-content-padded">分页(大尺寸)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pagination WUI-pagination-lg">
+					<li class="WUI-previous">
+						<a href="#">
+							&laquo;
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							1
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							2
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							3
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							4
+						</a>
+					</li>
+					<li class="WUI-active">
+						<a href="#">
+							5
+						</a>
+					</li>
+					<li class="WUI-next WUI-disabled">
+						<a href="#">
+							&raquo;
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h5 class="WUI-content-padded">分页(小尺寸)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pagination WUI-pagination-sm">
+					<li class="WUI-previous">
+						<a href="#">
+							&laquo;
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							1
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							2
+						</a>
+					</li>
+					<li class="WUI-active">
+						<a href="#">
+							3
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							4
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							5
+						</a>
+					</li>
+					<li class="WUI-next">
+						<a href="#">
+							&raquo;
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h5 class="WUI-content-padded">翻页(默认)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pager">
+					<li>
+						<a href="#">
+							上一页
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							下一页
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h5 class="WUI-content-padded">翻页(对齐)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pager">
+					<li class="WUI-previous">
+						<a href="#">
+							上一页
+						</a>
+					</li>
+					<li class="WUI-next">
+						<a href="#">
+							下一页
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h5 class="WUI-content-padded">翻页(禁用)</h5>
+			<div class="WUI-content-padded">
+				<ul class="WUI-pager">
+					<li class="WUI-disabled">
+						<span> 上一页 </span>
+					</li>
+					<li>
+						<a href="#">
+							下一页
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script>
+			WUI.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			(function($) {
+				$('.WUI-pagination').on('tap', 'a', function() {
+					var li = this.parentNode;
+					var classList = li.classList;
+					if (!classList.contains('WUI-active') && !classList.contains('WUI-disabled')) {
+						var active = li.parentNode.querySelector('.WUI-active');
+						if (classList.contains('WUI-previous')) {//previous
+							if (active) {
+								var previous = active.previousElementSibling;
+								console.log('previous', previous);
+								if (previous && !previous.classList.contains('WUI-previous')) {
+									$.trigger(previous.querySelector('a'), 'tap');
+								} else {
+									classList.add('WUI-disabled');
+								}
+							}
+						} else if (classList.contains('WUI-next')) {//next
+							if (active) {
+								var next = active.nextElementSibling;
+								if (next && !next.classList.contains('WUI-next')) {
+									$.trigger(next.querySelector('a'), 'tap');
+								} else {
+									classList.add('WUI-disabled');
+								}
+							}
+						} else {//page
+							active.classList.remove('WUI-active');
+							classList.add('WUI-active');
+							var page = parseInt(this.innerText);
+							var previousPageElement = li.parentNode.querySelector('.WUI-previous');
+							var nextPageElement = li.parentNode.querySelector('.WUI-next');
+							previousPageElement.classList.remove('WUI-disabled');
+							nextPageElement.classList.remove('WUI-disabled');
+							if (page <= 1) {
+								previousPageElement.classList.add('WUI-disabled');
+							} else if (page >= 5) {
+								nextPageElement.classList.add('WUI-disabled');
+							}
+						}
+					}
+				});
+			})(WUI); 
+		</script>
+	</body>
+</html>

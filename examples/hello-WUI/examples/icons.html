@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+		<style>
+			.flex-container {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				justify-content: space-between;
+				text-align: center;
+			}
+			.WUI-content-padded {
+				padding: 10px;
+			}
+			.WUI-content-padded a {
+				margin: 3px;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				text-align: center;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+			}
+			.WUI-content-padded a .WUI-icon {
+				margin-top: 12px;
+			}
+			.WUI-spinner,
+			.WUI-spinner-white {
+				margin-top: 12px
+			}
+			.active .WUI-spinner-indicator {
+				background: #007AFF;
+			}
+			.WUI-content a {
+				color: #8F8F94;
+			}
+			.WUI-content a.active {
+				color: #007aff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">icon（图标）</h1>
+		</header>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<p style="text-align: center;">点击图标查看高亮样式</p>
+				<div class="flex-container">
+					<a id="icon-icon-contact"><span class="WUI-icon WUI-icon-contact"></span></a>
+					<a id="icon-person"><span class="WUI-icon WUI-icon-person"></span></a>
+					<a id="icon-personadd"><span class="WUI-icon WUI-icon-personadd"></span></a>
+					<a id="icon-phone"><span class="WUI-icon WUI-icon-phone"></span></a>
+					<a id="icon-email"><span class="WUI-icon WUI-icon-email"></span></a>
+					<a id="icon-chatbubble"><span class="WUI-icon WUI-icon-chatbubble"></span></a>
+					<a id="icon-chatboxes"><span class="WUI-icon WUI-icon-chatboxes"></span></a>
+					<a><span class="WUI-icon WUI-icon-weibo"></span></a>
+					<a><span class="WUI-icon WUI-icon-weixin"></span></a>
+					<a><span class="WUI-icon WUI-icon-pengyouquan"></span></a>
+					<a><span class="WUI-icon WUI-icon-chat"></span></a>
+					<a><span class="WUI-icon WUI-icon-qq"></span></a>
+
+					<a><span class="WUI-icon WUI-icon-videocam"></span></a>
+					<a><span class="WUI-icon WUI-icon-camera"></span></a>
+					<a><span class="WUI-icon WUI-icon-image"></span></a>
+					<a id="icon-mic"><span class="WUI-icon WUI-icon-mic"></span></a>
+					<a><span class="WUI-icon WUI-icon-micoff"></span></a>
+					<a id="icon-location"><span class="WUI-icon WUI-icon-location"></span></a>
+					<a><span class="WUI-icon WUI-icon-map"></span></a>
+					<a><span class="WUI-icon WUI-icon-compose"></span></a>
+					<a><span class="WUI-icon WUI-icon-trash"></span></a>
+					<a><span class="WUI-icon WUI-icon-upload"></span></a>
+					<a><span class="WUI-icon WUI-icon-download"></span></a>
+					<a id="icon-close"><span class="WUI-icon WUI-icon-close"></span></a>
+					<a><span class="WUI-icon WUI-icon-closeempty"></span></a>
+					<a><span class="WUI-icon WUI-icon-redo"></span></a>
+					<a><span class="WUI-icon WUI-icon-undo"></span></a>
+					<a id="icon-refresh"><span class="WUI-icon WUI-icon-refresh"></span></a>
+					<a><span class="WUI-icon WUI-icon-refreshempty"></span></a>
+					<a><span class="WUI-icon WUI-icon-reload"></span></a>
+					<a><span class="WUI-icon WUI-icon-loop"></span></a>
+					<!--<a><span class="WUI-icon WUI-icon-loopstrong"></span></a>-->
+					<a>
+						<span class="WUI-spinner"></span>
+					</a>
+					<a id="icon-star"><span class="WUI-icon WUI-icon-star"></span></a>
+					<a><span class="WUI-icon WUI-icon-starhalf"></span></a>
+					<a id="icon-plus"><span class="WUI-icon WUI-icon-plus"></span></a>
+					<a><span class="WUI-icon WUI-icon-plusempty"></span></a>
+					<a id="icon-minus"><span class="WUI-icon WUI-icon-minus"></span></a>
+					<a><span class="WUI-icon WUI-icon-checkmarkempty"></span></a>
+					<a><span class="WUI-icon WUI-icon-search"></span></a>
+					<!--<a><span class="WUI-icon WUI-icon-searchstrong"></span></a>-->
+					<!--<a><span class="WUI-icon WUI-icon-share"></span></a>-->
+
+					<a id="icon-home"><span class="WUI-icon WUI-icon-home"></span></a>
+					<a><span class="WUI-icon WUI-icon-navigate"></span></a>
+					<a id="icon-gear"><span class="WUI-icon WUI-icon-gear"></span></a>
+					<a><span class="WUI-icon WUI-icon-settings"></span></a>
+					<!--<a><span class="WUI-icon WUI-icon-settingsstrong"></span></a>-->
+					<a><span class="WUI-icon WUI-icon-list"></span></a>
+					<a><span class="WUI-icon WUI-icon-bars"></span></a>
+					<a><span class="WUI-icon WUI-icon-paperplane"></span></a>
+					<a id="icon-info"><span class="WUI-icon WUI-icon-info"></span></a>
+					<a id="icon-help"><span class="WUI-icon WUI-icon-help"></span></a>
+					<a><span class="WUI-icon WUI-icon-locked"></span></a>
+					<a id="icon-more"><span class="WUI-icon WUI-icon-more"></span></a>
+					<a><span class="WUI-icon WUI-icon-flag"></span></a>
+					<a><span class="WUI-icon WUI-icon-paperclip"></span></a>
+					<a><span class="WUI-icon WUI-icon-eye"></span></a>
+
+
+
+					<a><span class="WUI-icon WUI-icon-back"></span></a>
+					<a><span class="WUI-icon WUI-icon-forward"></span></a>
+
+					<a><span class="WUI-icon WUI-icon-arrowup"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowdown"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowleft"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowright"></span></a>
+
+					<a><span class="WUI-icon WUI-icon-arrowthinup"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowthindown"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowthinleft"></span></a>
+					<a><span class="WUI-icon WUI-icon-arrowthinright"></span></a>
+
+					<a><span class="WUI-icon WUI-icon-pulldown"></span></a>
+				</div>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			WUI.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var active = null,
+				lastid, span;
+			WUI(".WUI-content").on("tap", "a", function() {
+				var id = this.getAttribute("id");
+				if (!active) {
+					this.classList.add("active");
+					if (id) {
+						span = this.querySelector("span");
+						span.classList.remove("WUI-" + id);
+						span.classList.add("WUI-" + id + "-filled");
+					}
+					active = this;
+				} else {
+					active.classList.remove("active");
+					if (lastid) {
+						span.classList.remove("WUI-" + lastid + "-filled");
+						span.classList.add("WUI-" + lastid);
+					}
+
+					this.classList.add("active");
+					if (id) {
+						span = this.querySelector("span");
+						span.classList.remove("WUI-" + id);
+						span.classList.add("WUI-" + id + "-filled");
+					}
+
+					active = this;
+				}
+				lastid = id;
+			});
+		</script>
+	</body>
+</html>

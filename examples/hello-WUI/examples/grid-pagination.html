@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			.WUI-slider-indicator {
+				bottom: 0;
+			}
+			.WUI-slider {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">左右拖动分页9宫</h1>
+		</header>
+		<div class="WUI-content">
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell">
+					循环
+					<div id="Gallery_Toggle" class="WUI-switch">
+						<div class="WUI-switch-handle"></div>
+					</div>
+				</li>
+			</ul>
+			<div id="Gallery" class="WUI-slider" style="margin-top:15px;">
+				<div class="WUI-slider-group">
+					<div class="WUI-slider-item">
+						<ul class="WUI-table-view WUI-grid-view WUI-grid-9">
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-home"></span>
+									<div class="WUI-media-body">Home</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-email"><span class="WUI-badge">5</span></span>
+									<div class="WUI-media-body">Email</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-chatbubble"></span>
+									<div class="WUI-media-body">Chat</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-location"></span>
+									<div class="WUI-media-body">location</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-search"></span>
+									<div class="WUI-media-body">Search</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-phone"></span>
+									<div class="WUI-media-body">Phone</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-gear"></span>
+									<div class="WUI-media-body">Setting</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-info"></span>
+									<div class="WUI-media-body">about</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-more"></span>
+									<div class="WUI-media-body">more</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="WUI-slider-item">
+						<ul class="WUI-table-view WUI-grid-view WUI-grid-9">
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-home"></span>
+									<div class="WUI-media-body">Home</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-email"><span class="WUI-badge">5</span></span>
+									<div class="WUI-media-body">Email</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-chatbubble"></span>
+									<div class="WUI-media-body">Chat</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-location"></span>
+									<div class="WUI-media-body">location</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-search"></span>
+									<div class="WUI-media-body">Search</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-phone"></span>
+									<div class="WUI-media-body">Phone</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-gear"></span>
+									<div class="WUI-media-body">Setting</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-info"></span>
+									<div class="WUI-media-body">about</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-more"></span>
+									<div class="WUI-media-body">more</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="WUI-slider-item">
+						<ul class="WUI-table-view WUI-grid-view WUI-grid-9">
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-home"></span>
+									<div class="WUI-media-body">Home</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-email"><span class="WUI-badge">5</span></span>
+									<div class="WUI-media-body">Email</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-chatbubble"></span>
+									<div class="WUI-media-body">Chat</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-location"></span>
+									<div class="WUI-media-body">location</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-search"></span>
+									<div class="WUI-media-body">Search</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-phone"></span>
+									<div class="WUI-media-body">Phone</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-gear"></span>
+									<div class="WUI-media-body">Setting</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-info"></span>
+									<div class="WUI-media-body">about</div>
+								</a>
+							</li>
+							<li class="WUI-table-view-cell WUI-media WUI-col-xs-4 WUI-col-sm-3">
+								<a href="#">
+									<span class="WUI-icon WUI-icon-more"></span>
+									<div class="WUI-media-body">more</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="WUI-slider-indicator">
+					<div class="WUI-indicator WUI-active"></div>
+					<div class="WUI-indicator"></div>
+					<div class="WUI-indicator"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init();
+		WUI.ready(function() {
+			var slider = document.getElementById('Gallery');
+			var group = slider.querySelector('.WUI-slider-group');
+			var items = WUI('.WUI-slider-item', group);
+			//克隆第一个节点
+			var first = items[0].cloneNode(true);
+			first.classList.add('WUI-slider-item-duplicate');
+			//克隆最后一个节点
+			var last = items[items.length - 1].cloneNode(true);
+			last.classList.add('WUI-slider-item-duplicate');
+			//处理是否循环逻辑，若支持循环，需支持两点：
+			//1、在.WUI-slider-group节点上增加.WUI-slider-loop类
+			//2、重复增加2个循环节点，图片顺序变为：N、1、2...N、1
+			var sliderApi = WUI(slider).slider();
+
+			function toggleLoop(loop) {
+					if (loop) {
+						group.classList.add('WUI-slider-loop');
+						group.insertBefore(last, group.firstChild);
+						group.appendChild(first);
+						sliderApi.refresh();
+						sliderApi.gotoItem(0);
+					} else {
+						group.classList.remove('WUI-slider-loop');
+						group.removeChild(first);
+						group.removeChild(last);
+						sliderApi.refresh();
+						sliderApi.gotoItem(0);
+					}
+				}
+				//按下“循环”按钮的处理逻辑；
+			document.getElementById('Gallery_Toggle').addEventListener('toggle', function(e) {
+				var loop = e.detail.isActive;
+				toggleLoop(loop);
+			});
+		});
+	</script>
+
+</html>

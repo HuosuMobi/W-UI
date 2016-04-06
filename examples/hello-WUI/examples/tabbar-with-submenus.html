@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			.WUI-bar-popover {
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">底部选项卡-二级菜单(div)</h1>
+		</header>
+		<nav class="WUI-bar WUI-bar-tab ">
+			<a class="WUI-tab-item" href="#Popover_0">产品</a>
+			<a class="WUI-tab-item" href="#Popover_1">方案</a>
+			<a class="WUI-tab-item" href="#Popover_2">新闻</a>
+		</nav>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<p style="text-indent: 22px;">这是包含二级菜单的底部选项卡示例，点击底部菜单，会展开显示对应的二级菜单。</p>
+			</div>
+		</div>
+		<div id="Popover_0" class="WUI-popover WUI-bar-popover">
+			<div class="WUI-popover-arrow"></div>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell"><a href="#">iOS</a>
+				</li>
+				<li class="WUI-table-view-cell"><a href="#">Android</a>
+				</li>
+				<li class="WUI-table-view-cell"><a href="#">HTML5</a>
+				</li>
+			</ul>
+		</div>
+		<div id="Popover_1" class="WUI-popover WUI-bar-popover">
+			<div class="WUI-popover-arrow"></div>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell"><a href="#">PC方案</a>
+				</li>
+				<li class="WUI-table-view-cell"><a href="#">手机方案</a>
+				</li>
+				<li class="WUI-table-view-cell"><a href="#">TV方案</a>
+				</li>
+			</ul>
+		</div>
+		<div id="Popover_2" class="WUI-popover WUI-bar-popover">
+			<div class="WUI-popover-arrow"></div>
+			<ul class="WUI-table-view">
+				<li class="WUI-table-view-cell"><a href="#">公司新闻</a>
+				</li>
+				<li class="WUI-table-view-cell"><a href="#">行业新闻</a>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>

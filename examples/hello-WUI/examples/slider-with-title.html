@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">下方悬浮标题</h1>
+		</header>
+		<div class="WUI-content">
+			<ul class="WUI-table-view WUI-table-view-chevron">
+				<li id="switch" class="WUI-table-view-cell">
+					定时轮播
+					<div class="WUI-switch">
+						<div class="WUI-switch-handle"></div>
+					</div>
+				</li>
+			</ul>
+			<div id="slider" class="WUI-slider">
+				<div class="WUI-slider-group WUI-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="WUI-slider-item WUI-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+							<p class="WUI-slider-title">静静看这世界</p>
+						</a>
+					</div>
+					<div class="WUI-slider-item">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+							<p class="WUI-slider-title">幸福就是可以一起睡觉</p>
+						</a>
+					</div>
+					<div class="WUI-slider-item">
+						<a href="#">
+							<img src="../images/muwu.jpg">
+							<p class="WUI-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
+						</a>
+					</div>
+					<div class="WUI-slider-item">
+						<a href="#">
+							<img src="../images/cbd.jpg">
+							<p class="WUI-slider-title">Color of SIP CBD</p>
+						</a>
+					</div>
+					<div class="WUI-slider-item">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+							<p class="WUI-slider-title">静静看这世界</p>
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="WUI-slider-item WUI-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+							<p class="WUI-slider-title">幸福就是可以一起睡觉</p>
+						</a>
+					</div>
+				</div>
+				<div class="WUI-slider-indicator WUI-text-right">
+					<div class="WUI-indicator WUI-active"></div>
+					<div class="WUI-indicator"></div>
+					<div class="WUI-indicator"></div>
+					<div class="WUI-indicator"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		var slider = WUI("#slider");
+		document.getElementById("switch").addEventListener('toggle', function(e) {
+			if (e.detail.isActive) {
+				slider.slider({
+					interval: 5000
+				});
+			} else {
+				slider.slider({
+					interval: 0
+				});
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			h5 {
+				margin: 10px;
+			}
+			.WUI-badge {
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">badge（数字角标）</h1>
+		</header>
+		<div class="WUI-content">
+			<div class="WUI-content-padded">
+				<h5>有底色</h5>
+				<span class="WUI-badge">1</span>
+				<span class="WUI-badge WUI-badge-primary">12</span>
+				<span class="WUI-badge WUI-badge-success">123</span>
+				<span class="WUI-badge WUI-badge-warning">3</span>
+				<span class="WUI-badge WUI-badge-danger">45</span>
+				<span class="WUI-badge WUI-badge-purple">456</span>
+				<h5>无底色（使用父元素背景色）</h5>
+				<span class="WUI-badge WUI-badge-inverted">1</span>
+				<span class="WUI-badge WUI-badge-primary WUI-badge-inverted">2</span>
+				<span class="WUI-badge WUI-badge-success WUI-badge-inverted">3</span>
+				<span class="WUI-badge WUI-badge-warning WUI-badge-inverted">4</span>
+				<span class="WUI-badge WUI-badge-danger WUI-badge-inverted">5</span>
+				<span class="WUI-badge WUI-badge-royal WUI-badge-inverted">6</span>
+			</div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>

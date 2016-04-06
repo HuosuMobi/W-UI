@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			.WUI-table h4,.WUI-table h5,.WUI-table .WUI-h5,.WUI-table .WUI-h6,.WUI-table p{
+		        margin-top: 0;
+		    }
+		    .WUI-table h4{
+		        line-height: 21px;
+		        font-weight: 500;
+		    }
+		
+		    .WUI-table .oa-icon{
+		        position: absolute;
+		        right:0;
+		        bottom: 0;
+		    }
+		    .WUI-table .oa-icon-star-filled{
+		        color:#f14e41;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+		    <a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+		    <h1 class="WUI-title">三行列表</h1>
+		</header>
+		<div class="WUI-content">
+		    <ul class="WUI-table-view WUI-table-view-striped WUI-table-view-condensed">
+		        <li class="WUI-table-view-cell">
+		            <div class="WUI-table">
+		                <div class="WUI-table-cell WUI-col-xs-10">
+		                    <h4 class="WUI-ellipsis">信息化推进办公室张彦合同付款信息化</h4>
+		                    <h5>申请人：李四</h5>
+		                    <p class="WUI-h6 WUI-ellipsis">Hi，李明明，申请交行信息卡，100元等你拿，李明明，申请交行信息卡，100元等你拿，</p>
+		                </div>
+		                <div class="WUI-table-cell WUI-col-xs-2 WUI-text-right">
+		                    <span class="WUI-h5">12:25</span>
+		                </div>
+		            </div>
+		        </li>
+		        <li class="WUI-table-view-cell">
+		            <div class="WUI-table">
+		                <div class="WUI-table-cell WUI-col-xs-10">
+		                    <h4 class="WUI-ellipsis-2">信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款</h4>
+		                    <h5>申请人：李四</h5>
+		                    <p class="WUI-h6 WUI-ellipsis">Hi，李明明，申请交行信息卡，100元等你拿，李明明，申请交行信息卡，100元等你拿，</p>
+		                </div>
+		                <div class="WUI-table-cell WUI-col-xs-2 WUI-text-right">
+		                    <span class="WUI-h5">12:25</span>
+		                     
+		                </div>
+		            </div>
+		        </li>
+		        <li class="WUI-table-view-cell">
+		            <div class="WUI-table">
+		                <div class="WUI-table-cell WUI-col-xs-10">
+		                    <h4 class="WUI-ellipsis-2">信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款</h4>
+		                    <h5>申请人：李四</h5>
+		                    <p class="WUI-h6 WUI-ellipsis">Hi，李明明，申请交行信息卡，100元等你拿，李明明，申请交行信息卡，100元等你拿，</p>
+		                </div>
+		                <div class="WUI-table-cell WUI-col-xs-2 WUI-text-right">
+		                    <span class="WUI-h5">12:25</span>
+		                    
+		                </div>
+		            </div>
+		        </li>
+		        <li class="WUI-table-view-cell">
+		            <div class="WUI-table">
+		                <div class="WUI-table-cell WUI-col-xs-10">
+		                    <h4 class="WUI-ellipsis-2">信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款</h4>
+		                    <h5>申请人：李四</h5>
+		                    <p class="WUI-h6 WUI-ellipsis">Hi，李明明，申请交行信息卡，100元等你拿，李明明，申请交行信息卡，100元等你拿，</p>
+		                </div>
+		                <div class="WUI-table-cell WUI-col-xs-2 WUI-text-right">
+		                    <span class="WUI-h5">12:25</span>
+		                   
+		                </div>
+		            </div>
+		        </li>
+		        <li class="WUI-table-view-cell">
+		            <div class="WUI-table">
+		                <div class="WUI-table-cell WUI-col-xs-10">
+		                    <h4 class="WUI-ellipsis-2">信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款信息化推进办公室张彦合同付款</h4>
+		                    <h5>申请人：李四</h5>
+		                    <p class="WUI-h6 WUI-ellipsis">Hi，李明明，申请交行信息卡，100元等你拿，李明明，申请交行信息卡，100元等你拿，</p>
+		                </div>
+		                <div class="WUI-table-cell WUI-col-xs-2 WUI-text-right">
+		                    <span class="WUI-h5">12:25</span>
+		                     
+		                </div>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>

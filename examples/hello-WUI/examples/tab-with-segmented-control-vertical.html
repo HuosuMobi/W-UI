@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			.WUI-row.WUI-fullscreen>[class*="WUI-col-"] {
+				height: 100%;
+			}
+			.WUI-col-xs-3,
+			.WUI-control-content {
+				overflow-y: auto;
+				height: 100%;
+			}
+			.WUI-segmented-control .WUI-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+			.WUI-segmented-control.WUI-segmented-control-inverted .WUI-control-item.WUI-active {
+				background-color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">侧面选项卡-div模式</h1>
+		</header>
+		<div class="WUI-content WUI-row WUI-fullscreen">
+			<div class="WUI-col-xs-3">
+				<div id="segmentedControls" class="WUI-segmented-control WUI-segmented-control-inverted WUI-segmented-control-vertical">
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="WUI-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+				<div id="item1" class="WUI-control-content WUI-active">
+				</div>
+				<div id="item2" class="WUI-control-content">
+				</div>
+				<div id="item3" class="WUI-control-content">
+				</div>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script>
+			WUI.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var controls = document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+			var html = [];
+			var i = 1,
+				j = 1,
+				m = 16, //左侧选项卡数量+1
+				n = 21; //每个选项卡列表数量+1
+			for (; i < m; i++) {
+				html.push('<a class="WUI-control-item" href="#content' + i + '">选项' + i + '</a>');
+			}
+			controls.innerHTML = html.join('');
+			html = [];
+			for (i = 1; i < m; i++) {
+				html.push('<div id="content' + i + '" class="WUI-control-content"><ul class="WUI-table-view">');
+				for (j = 1; j < n; j++) {
+					html.push('<li class="WUI-table-view-cell">第' + i + '个选项卡子项-' + j + '</li>');
+				}
+				html.push('</ul></div>');
+			}
+			contents.innerHTML = html.join('');
+			 //默认选中第一个
+			controls.querySelector('.WUI-control-item').classList.add('WUI-active');
+			contents.querySelector('.WUI-control-content').classList.add('WUI-active');
+		</script>
+
+	</body>
+
+</html>

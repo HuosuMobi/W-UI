@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+			<a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+			<h1 class="WUI-title">input（输入框）</h1>
+		</header>
+		<div class="WUI-content">
+			<div class="WUI-content-padded" style="margin: 5px;">
+				<h5>默认搜索框：</h5>
+				<div class="WUI-input-row WUI-search">
+					<input type="search" class="WUI-input-clear" placeholder="">
+				</div>
+				<h5 class="WUI-plus-visible">语音输入搜索框：</h5>
+				<div class="WUI-input-row WUI-search WUI-plus-visible">
+					<input id="search" type="search" class="WUI-input-speech WUI-input-clear" placeholder="带语音输入的搜索框">
+				</div>
+				<h5>密码框：</h5>
+				<div class="WUI-input-row WUI-password">
+					<input type="password" class="WUI-input-password">
+				</div>
+				<form class="WUI-input-group">
+					<div class="WUI-input-row">
+						<label>Input</label>
+						<input type="text" placeholder="普通输入框">
+					</div>
+					<div class="WUI-input-row">
+						<label>Input</label>
+						<input type="text" class="WUI-input-clear" placeholder="带清除按钮的输入框">
+					</div>
+
+					<div class="WUI-input-row WUI-plus-visible">
+						<label>Input</label>
+						<input type="text" class="WUI-input-speech WUI-input-clear" placeholder="语音输入">
+					</div>
+					<div class="WUI-button-row">
+						<button type="button" class="WUI-btn WUI-btn-primary" onclick="return false;">确认</button>&nbsp;&nbsp;
+						<button type="button" class="WUI-btn WUI-btn-danger" onclick="return false;">取消</button>
+					</div>
+				</form>
+				<div class="WUI-input-row" style="margin: 10px 5px;">
+					<textarea id="textarea" rows="5" placeholder="多行文本框"></textarea>
+				</div>
+			</div>
+		</div>
+		<script src="../js/WUI.min.js"></script>
+		<script>
+			WUI.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			 //语音识别完成事件
+			document.getElementById("search").addEventListener('recognized', function(e) {
+				console.log(e.detail.value);
+			});
+		</script>
+	</body>
+
+</html>

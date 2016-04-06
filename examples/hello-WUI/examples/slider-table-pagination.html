@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+		    <a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+		    <h1 class="WUI-title">左右滑动分页</h1>
+		</header>
+		<div class="WUI-content">
+		    <div class="WUI-slider">
+		        <div class="WUI-slider-group WUI-slider-loop">
+		        	<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
+		            <div class="WUI-slider-item WUI-slider-item-duplicate">
+		                <ul class="WUI-table-view WUI-grid-view">
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/cbd.jpg">
+		                            <div class="WUI-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/yuantiao.jpg">
+		                            <div class="WUI-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>
+		            <div class="WUI-slider-item">
+		                <ul class="WUI-table-view WUI-grid-view">
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/shuijiao.jpg">
+		                            <div class="WUI-media-body">幸福就是可以一起睡觉</div></a></li>
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/muwu.jpg">
+		                            <div class="WUI-media-body">想要一间这样的木屋，静静的喝咖啡</div></a></li>
+		                </ul>
+		            </div>
+		            <div class="WUI-slider-item">
+		                <ul class="WUI-table-view WUI-grid-view">
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/cbd.jpg">
+		                            <div class="WUI-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/yuantiao.jpg">
+		                            <div class="WUI-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>
+		            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
+		            <div class="WUI-slider-item WUI-slider-item-duplicate">
+		                <ul class="WUI-table-view WUI-grid-view">
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/shuijiao.jpg">
+		                            <div class="WUI-media-body">幸福就是可以一起睡觉</div></a></li>
+		                    <li class="WUI-table-view-cell WUI-media WUI-col-xs-6"><a href="#"><img class="WUI-media-object" src="../images/muwu.jpg">
+		                            <div class="WUI-media-body">想要一间这样的木屋，静静的喝咖啡</div></a></li>
+		                </ul>
+		            </div>
+		        </div>
+		        <div class="WUI-slider-indicator" style="position: static;background-color: #fff;">
+		            <span class="WUI-action WUI-action-previous WUI-icon WUI-icon-back"></span>
+		            <div class="WUI-number">
+		                <span>1</span> / 2
+		            </div>
+		            <span class="WUI-action WUI-action-next WUI-icon WUI-icon-forward"></span>
+		        </div>
+		    </div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+	    WUI.init();
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body>
+
+		<header class="WUI-bar WUI-bar-nav">
+		    <a class="WUI-action-back WUI-icon WUI-icon-left-nav WUI-pull-left"></a>
+		    <h1 class="WUI-title">文字选项卡</h1>
+		</header>
+		<nav class="WUI-bar WUI-bar-tab">
+		    <a class="WUI-tab-item WUI-active" href="#">
+		        电话沟通
+		    </a>
+		    <a class="WUI-tab-item" href="#">
+		        在线交流
+		    </a>
+		    <a class="WUI-tab-item" href="#">
+		        短信咨询
+		    </a>
+		    <a class="WUI-tab-item" href="#">
+		        查看地图
+		    </a>
+		</nav>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>

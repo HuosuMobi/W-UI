@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello WUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准WUI.css-->
+		<link rel="stylesheet" href="../css/WUI.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			.WUI-btn{
+		        margin-top: 10px;
+		        margin-right: 100px;
+		        margin-left: 10px;
+		    }
+		</style>
+		
+	</head>
+
+	<body>
+		<header class="WUI-bar WUI-bar-nav">
+		    <a class="WUI-action-back WUI-icon WUI-icon-back WUI-pull-left"></a>
+		    <h1 class="WUI-title">带数字的按钮</h1>
+		</header>
+		<div class="WUI-content">
+		    <div class="WUI-content-padded">
+		        <button type="button" class="WUI-btn">Badge button <span class="WUI-badge">1</span></button>
+		        <button type="button" class="WUI-btn WUI-btn-primary">Badge button <span class="WUI-badge WUI-badge-primary">2</span></button>
+		        <button type="button" class="WUI-btn WUI-btn-success">Badge button <span class="WUI-badge WUI-badge-success">12</span></button>
+		        <button type="button" class="WUI-btn WUI-btn-warning">Badge button <span class="WUI-badge WUI-badge-warning">121</span></button>
+		        <button type="button" class="WUI-btn WUI-btn-danger">Badge button <span class="WUI-badge WUI-badge-danger">999</span></button>
+		        <button type="button" class="WUI-btn WUI-btn-royal">Badge button <span class="WUI-badge WUI-badge-royal">999</span></button>
+		
+		    </div>
+		</div>
+	</body>
+	<script src="../js/WUI.min.js"></script>
+	<script>
+		WUI.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>
